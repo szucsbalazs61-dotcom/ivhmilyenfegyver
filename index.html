@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Az Első Világháború Fegyverei Szűcs</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -23,8 +24,9 @@
     header{
       height:100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-        url('hero.jpg') center/cover no-repeat;
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+      url('hero.jpg') center/cover no-repeat;
+
       display:flex;
       flex-direction:column;
       justify-content:center;
@@ -154,6 +156,68 @@
       font-weight:bold;
     }
 
+    .quiz-container{
+      background:#222;
+      padding:40px;
+      border-radius:20px;
+    }
+
+    .question{
+      margin-bottom:30px;
+      padding:20px;
+      background:#333;
+      border-radius:10px;
+    }
+
+    .question h3{
+      margin-bottom:15px;
+      color:#ffcc00;
+    }
+
+    .question label{
+      display:block;
+      margin:10px 0;
+      padding:10px;
+      background:#444;
+      border-radius:8px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .question label:hover{
+      background:#555;
+    }
+
+    button{
+      padding:15px 30px;
+      border:none;
+      background:#ffcc00;
+      color:black;
+      font-size:1.1rem;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:white;
+    }
+
+    .helyes{
+      background:green !important;
+    }
+
+    .hibas{
+      background:darkred !important;
+    }
+
+    #eredmeny{
+      margin-top:30px;
+      color:#ffcc00;
+      font-size:2rem;
+    }
+
     @media(max-width:768px){
 
       header h1{
@@ -165,145 +229,400 @@
       }
 
     }
+
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Az Első Világháború Fegyverei</h1>
-    <p>
-      Fedezd fel az 1914–1918 közötti háború legendás fegyvereit,
-      a lövészárkok világát és Magyarország szerepét az Osztrák–Magyar Monarchiában.
-    </p>
-  </header>
+<header>
+  <h1>Az Első Világháború Fegyverei</h1>
 
-  <nav>
-    <ul>
-      <li><a href="#fegyverek">Fegyverek</a></li>
-      <li><a href="#magyar">Magyarország</a></li>
-      <li><a href="#tortenelem">Történelem</a></li>
-    </ul>
-  </nav>
+  <p>
+    Fedezd fel az 1914–1918 közötti háború legendás fegyvereit,
+    a lövészárkok világát és Magyarország szerepét az
+    Osztrák–Magyar Monarchiában.
+  </p>
+</header>
 
-  <section id="fegyverek">
-    <h2 class="section-title">Híres Fegyverek</h2>
+<nav>
+  <ul>
+    <li><a href="#fegyverek">Fegyverek</a></li>
+    <li><a href="#magyar">Magyarország</a></li>
+    <li><a href="#tortenelem">Történelem</a></li>
+    <li><a href="#kviz">Kvíz</a></li>
+  </ul>
+</nav>
 
-    <div class="cards">
+<section id="fegyverek">
 
-      <div class="card">
-        <img src="maxim.jpg" alt="Géppuska">
-        <div class="card-content">
-          <h3>Maxim Géppuska</h3>
-          <p>
-            Az első modern géppuska, amely teljesen megváltoztatta a hadviselést.
-            Percenként több száz lövést tudott leadni.
-          </p>
-        </div>
-      </div>
+  <h2 class="section-title">Híres Fegyverek</h2>
 
-      <div class="card">
-        <img src="tank.jpg" alt="Tank">
-        <div class="card-content">
-          <h3>Brit Mark I Tank</h3>
-          <p>
-            Az első harckocsik 1916-ban jelentek meg.
-            A céljuk a lövészárkok áttörése volt.
-          </p>
-        </div>
-      </div>
+  <div class="cards">
 
-      <div class="card">
-        <img src="mustargaz.jpg" alt="Mustárgáz">
-        <div class="card-content">
-          <h3>Vegyi Fegyverek</h3>
-          <p>
-            A mustárgáz és más mérgező gázok az első világháború
-            legrettegettebb fegyverei közé tartoztak.
-          </p>
-        </div>
-      </div>
+    <div class="card">
+      <img src="maxim.jpg" alt="Géppuska">
 
-      <div class="card">
-        <img src="mannlicher.jpg" alt="Puska">
-        <div class="card-content">
-          <h3>Mannlicher Puska</h3>
-          <p>
-            Az Osztrák–Magyar Monarchia katonáinak egyik legfontosabb fegyvere.
-          </p>
-        </div>
-      </div>
+      <div class="card-content">
+        <h3>Maxim Géppuska</h3>
 
-    </div>
-  </section>
-
-  <section id="magyar" class="hungary">
-    <h2 class="section-title">Magyarország Szerepe</h2>
-
-    <p style="font-size:1.2rem; margin-bottom:25px;">
-      Magyarország az <span class="highlight">Osztrák–Magyar Monarchia</span> részeként
-      vett részt az első világháborúban. Több százezer magyar katona harcolt
-      különböző frontokon.
-    </p>
-
-    <div class="cards">
-
-      <div class="card">
-        <img src="magyar-katona.jpg" alt="Magyar katonák">
-        <div class="card-content">
-          <h3>Magyar Honvédek</h3>
-          <p>
-            A magyar katonák az olasz, orosz és balkáni frontokon is harcoltak.
-          </p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="tuzerseg.jpg" alt="Tüzérség">
-        <div class="card-content">
-          <h3>Tüzérség</h3>
-          <p>
-            A Monarchia erős tüzérsége fontos szerepet játszott a csatákban.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="tortenelem">
-    <h2 class="section-title">Fontos Események</h2>
-
-    <div class="timeline">
-
-      <div>
-        <h4>1914 – A háború kezdete</h4>
         <p>
-          Ferenc Ferdinánd meggyilkolása után kitört az első világháború.
+          Az első modern géppuska, amely teljesen megváltoztatta
+          a hadviselést.
         </p>
       </div>
-
-      <div>
-        <h4>1916 – A tankok megjelenése</h4>
-        <p>
-          A brit hadsereg először vetett be harckocsikat.
-        </p>
-      </div>
-
-      <div>
-        <h4>1918 – A háború vége</h4>
-        <p>
-          A központi hatalmak vereséget szenvedtek, és véget ért a háború.
-        </p>
-      </div>
-
     </div>
-  </section>
 
-  <footer>
-    <p>
-      Készítette: Saját történelem projekt | Első világháború fegyverei
-    </p>
-  </footer>
+    <div class="card">
+      <img src="tank.jpg" alt="Tank">
+
+      <div class="card-content">
+        <h3>Brit Mark I Tank</h3>
+
+        <p>
+          Az első harckocsik 1916-ban jelentek meg.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="mustargaz.jpg" alt="Mustárgáz">
+
+      <div class="card-content">
+        <h3>Vegyi Fegyverek</h3>
+
+        <p>
+          A mustárgáz az első világháború egyik
+          legrettegettebb fegyvere volt.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="mannlicher.jpg" alt="Puska">
+
+      <div class="card-content">
+        <h3>Mannlicher Puska</h3>
+
+        <p>
+          Az Osztrák–Magyar Monarchia katonáinak
+          egyik legfontosabb fegyvere.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="magyar" class="hungary">
+
+  <h2 class="section-title">Magyarország Szerepe</h2>
+
+  <p style="font-size:1.2rem; margin-bottom:25px;">
+    Magyarország az
+    <span class="highlight">Osztrák–Magyar Monarchia</span>
+    részeként vett részt az első világháborúban.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="magyar-katona.jpg" alt="Magyar katonák">
+
+      <div class="card-content">
+        <h3>Magyar Honvédek</h3>
+
+        <p>
+          Magyar katonák harcoltak az olasz és az orosz fronton is.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="tuzerseg.jpg" alt="Tüzérség">
+
+      <div class="card-content">
+        <h3>Tüzérség</h3>
+
+        <p>
+          A Monarchia tüzérsége fontos szerepet játszott a háborúban.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="tortenelem">
+
+  <h2 class="section-title">Fontos Események</h2>
+
+  <div class="timeline">
+
+    <div>
+      <h4>1914 – A háború kezdete</h4>
+
+      <p>
+        Ferenc Ferdinánd meggyilkolása után kitört az első világháború.
+      </p>
+    </div>
+
+    <div>
+      <h4>1916 – Tankok megjelenése</h4>
+
+      <p>
+        A brit hadsereg először vetett be tankokat.
+      </p>
+    </div>
+
+    <div>
+      <h4>1918 – A háború vége</h4>
+
+      <p>
+        A központi hatalmak vereséget szenvedtek.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="kviz">
+
+  <h2 class="section-title">Első Világháborús Kvíz</h2>
+
+  <div class="quiz-container">
+
+    <!-- 1 -->
+    <div class="question">
+      <h3>1. Mikor kezdődött az első világháború?</h3>
+
+      <label><input type="radio" name="q1" value="a"> 1912</label>
+      <label><input type="radio" name="q1" value="b"> 1914</label>
+      <label><input type="radio" name="q1" value="c"> 1916</label>
+      <label><input type="radio" name="q1" value="d"> 1920</label>
+    </div>
+
+    <!-- 2 -->
+    <div class="question">
+      <h3>2. Melyik volt híres géppuska?</h3>
+
+      <label><input type="radio" name="q2" value="a"> Maxim</label>
+      <label><input type="radio" name="q2" value="b"> AK-47</label>
+      <label><input type="radio" name="q2" value="c"> M16</label>
+      <label><input type="radio" name="q2" value="d"> Glock</label>
+    </div>
+
+    <!-- 3 -->
+    <div class="question">
+      <h3>3. Melyik ország része volt Magyarország?</h3>
+
+      <label><input type="radio" name="q3" value="a"> Franciaország</label>
+      <label><input type="radio" name="q3" value="b"> Oroszország</label>
+      <label><input type="radio" name="q3" value="c"> Osztrák–Magyar Monarchia</label>
+      <label><input type="radio" name="q3" value="d"> USA</label>
+    </div>
+
+    <!-- 4 -->
+    <div class="question">
+      <h3>4. Milyen gázt használtak a háborúban?</h3>
+
+      <label><input type="radio" name="q4" value="a"> Oxigén</label>
+      <label><input type="radio" name="q4" value="b"> Hélium</label>
+      <label><input type="radio" name="q4" value="c"> Mustárgáz</label>
+      <label><input type="radio" name="q4" value="d"> Nitrogén</label>
+    </div>
+
+    <!-- 5 -->
+    <div class="question">
+      <h3>5. Melyik évben jelentek meg a tankok?</h3>
+
+      <label><input type="radio" name="q5" value="a"> 1916</label>
+      <label><input type="radio" name="q5" value="b"> 1925</label>
+      <label><input type="radio" name="q5" value="c"> 1930</label>
+      <label><input type="radio" name="q5" value="d"> 1905</label>
+    </div>
+
+    <!-- 6 -->
+    <div class="question">
+      <h3>6. Ki meggyilkolása indította el a háborút?</h3>
+
+      <label><input type="radio" name="q6" value="a"> Hitler</label>
+      <label><input type="radio" name="q6" value="b"> Churchill</label>
+      <label><input type="radio" name="q6" value="c"> Ferenc Ferdinánd</label>
+      <label><input type="radio" name="q6" value="d"> Napóleon</label>
+    </div>
+
+    <!-- 7 -->
+    <div class="question">
+      <h3>7. Melyik puska tartozott a Monarchiához?</h3>
+
+      <label><input type="radio" name="q7" value="a"> Kalasnyikov</label>
+      <label><input type="radio" name="q7" value="b"> Mannlicher</label>
+      <label><input type="radio" name="q7" value="c"> Uzi</label>
+      <label><input type="radio" name="q7" value="d"> M4A1</label>
+    </div>
+
+    <!-- 8 -->
+    <div class="question">
+      <h3>8. Milyen harcmodor volt jellemző?</h3>
+
+      <label><input type="radio" name="q8" value="a"> Űrháború</label>
+      <label><input type="radio" name="q8" value="b"> Lövészárok-háború</label>
+      <label><input type="radio" name="q8" value="c"> Rakétaharc</label>
+      <label><input type="radio" name="q8" value="d"> Modern drónháború</label>
+    </div>
+
+    <!-- 9 -->
+    <div class="question">
+      <h3>9. Mikor ért véget a háború?</h3>
+
+      <label><input type="radio" name="q9" value="a"> 1918</label>
+      <label><input type="radio" name="q9" value="b"> 1922</label>
+      <label><input type="radio" name="q9" value="c"> 1910</label>
+      <label><input type="radio" name="q9" value="d"> 1939</label>
+    </div>
+
+    <!-- 10 -->
+    <div class="question">
+      <h3>10. Kik használták először a tankokat?</h3>
+
+      <label><input type="radio" name="q10" value="a"> Németek</label>
+      <label><input type="radio" name="q10" value="b"> Olaszok</label>
+      <label><input type="radio" name="q10" value="c"> Brittek</label>
+      <label><input type="radio" name="q10" value="d"> Japánok</label>
+    </div>
+
+    <!-- 11 -->
+    <div class="question">
+      <h3>11. Melyik volt vegyi fegyver?</h3>
+
+      <label><input type="radio" name="q11" value="a"> Kard</label>
+      <label><input type="radio" name="q11" value="b"> Pajzs</label>
+      <label><input type="radio" name="q11" value="c"> Mustárgáz</label>
+      <label><input type="radio" name="q11" value="d"> Lándzsa</label>
+    </div>
+
+    <!-- 12 -->
+    <div class="question">
+      <h3>12. Hol harcoltak magyar katonák?</h3>
+
+      <label><input type="radio" name="q12" value="a"> Olasz és orosz fronton</label>
+      <label><input type="radio" name="q12" value="b"> Csak Afrikában</label>
+      <label><input type="radio" name="q12" value="c"> Amerikában</label>
+      <label><input type="radio" name="q12" value="d"> Ausztráliában</label>
+    </div>
+
+    <!-- 13 -->
+    <div class="question">
+      <h3>13. Mi volt a tankok célja?</h3>
+
+      <label><input type="radio" name="q13" value="a"> Repülés</label>
+      <label><input type="radio" name="q13" value="b"> Lövészárkok áttörése</label>
+      <label><input type="radio" name="q13" value="c"> Hajózás</label>
+      <label><input type="radio" name="q13" value="d"> Hídépítés</label>
+    </div>
+
+    <!-- 14 -->
+    <div class="question">
+      <h3>14. Mi volt a Maxim?</h3>
+
+      <label><input type="radio" name="q14" value="a"> Tank</label>
+      <label><input type="radio" name="q14" value="b"> Géppuska</label>
+      <label><input type="radio" name="q14" value="c"> Gáz</label>
+      <label><input type="radio" name="q14" value="d"> Pisztoly</label>
+    </div>
+
+    <!-- 15 -->
+    <div class="question">
+      <h3>15. Hány évig tartott az első világháború?</h3>
+
+      <label><input type="radio" name="q15" value="a"> 1 év</label>
+      <label><input type="radio" name="q15" value="b"> 2 év</label>
+      <label><input type="radio" name="q15" value="c"> 4 év</label>
+      <label><input type="radio" name="q15" value="d"> 10 év</label>
+    </div>
+
+    <button onclick="ellenoriz()">
+      Eredmény Ellenőrzése
+    </button>
+
+    <h2 id="eredmeny"></h2>
+
+  </div>
+
+</section>
+
+<footer>
+  <p>
+    Készítette: Saját történelem projekt |
+    Első világháború fegyverei
+  </p>
+</footer>
+
+<script>
+
+function ellenoriz(){
+
+  const valaszok = {
+    q1:"b",
+    q2:"a",
+    q3:"c",
+    q4:"c",
+    q5:"a",
+    q6:"c",
+    q7:"b",
+    q8:"b",
+    q9:"a",
+    q10:"c",
+    q11:"c",
+    q12:"a",
+    q13:"b",
+    q14:"b",
+    q15:"c"
+  };
+
+  let pont = 0;
+
+  for(let kerdes in valaszok){
+
+    const valasztott =
+    document.querySelector(`input[name="${kerdes}"]:checked`);
+
+    const inputs =
+    document.querySelectorAll(`input[name="${kerdes}"]`);
+
+    inputs.forEach(input=>{
+
+      input.parentElement.classList.remove("helyes");
+      input.parentElement.classList.remove("hibas");
+
+      if(input.value === valaszok[kerdes]){
+        input.parentElement.classList.add("helyes");
+      }
+
+    });
+
+    if(valasztott){
+
+      if(valasztott.value === valaszok[kerdes]){
+        pont++;
+      } else {
+        valasztott.parentElement.classList.add("hibas");
+      }
+
+    }
+
+  }
+
+  document.getElementById("eredmeny").innerHTML =
+  "Pontszámod: " + pont + " / 15";
+
+}
+
+</script>
 
 </body>
 </html>
