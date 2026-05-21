@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Az Első Világháború Fegyverei</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(to bottom, #1a1a1a, #3b2f2f);
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      height:100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+        url('hero.jpg') center/cover no-repeat;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    header h1{
+      font-size:4rem;
+      color:#ffcc00;
+      text-shadow:3px 3px 10px black;
+      margin-bottom:20px;
+    }
+
+    header p{
+      max-width:800px;
+      font-size:1.3rem;
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      background:#111;
+      padding:15px;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    nav ul{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      list-style:none;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:#ffcc00;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:white;
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      font-size:2.5rem;
+      margin-bottom:30px;
+      color:#ffcc00;
+      border-left:6px solid #ffcc00;
+      padding-left:15px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#222;
+      border-radius:15px;
+      overflow:hidden;
+      transition:0.4s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .card:hover{
+      transform:translateY(-10px) scale(1.02);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .card h3{
+      color:#ffcc00;
+      margin-bottom:10px;
+    }
+
+    .hungary{
+      background:linear-gradient(135deg, #8b0000, #006400);
+      border-top:5px solid white;
+      border-bottom:5px solid red;
+    }
+
+    .timeline{
+      border-left:4px solid #ffcc00;
+      padding-left:20px;
+    }
+
+    .timeline div{
+      margin-bottom:30px;
+    }
+
+    .timeline h4{
+      color:#ffcc00;
+      margin-bottom:5px;
+    }
+
+    footer{
+      background:#111;
+      text-align:center;
+      padding:30px;
+      margin-top:40px;
+    }
+
+    footer p{
+      color:#ccc;
+    }
+
+    .highlight{
+      color:#ffcc00;
+      font-weight:bold;
+    }
+
+    @media(max-width:768px){
+
+      header h1{
+        font-size:2.5rem;
+      }
+
+      .section-title{
+        font-size:2rem;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Az Első Világháború Fegyverei</h1>
+    <p>
+      Fedezd fel az 1914–1918 közötti háború legendás fegyvereit,
+      a lövészárkok világát és Magyarország szerepét az Osztrák–Magyar Monarchiában.
+    </p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#fegyverek">Fegyverek</a></li>
+      <li><a href="#magyar">Magyarország</a></li>
+      <li><a href="#tortenelem">Történelem</a></li>
+    </ul>
+  </nav>
+
+  <section id="fegyverek">
+    <h2 class="section-title">Híres Fegyverek</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="geppuska.jpg" alt="Géppuska">
+        <div class="card-content">
+          <h3>Maxim Géppuska</h3>
+          <p>
+            Az első modern géppuska, amely teljesen megváltoztatta a hadviselést.
+            Percenként több száz lövést tudott leadni.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="tank.jpg" alt="Tank">
+        <div class="card-content">
+          <h3>Brit Mark I Tank</h3>
+          <p>
+            Az első harckocsik 1916-ban jelentek meg.
+            A céljuk a lövészárkok áttörése volt.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="gaz.jpg" alt="Mustárgáz">
+        <div class="card-content">
+          <h3>Vegyi Fegyverek</h3>
+          <p>
+            A mustárgáz és más mérgező gázok az első világháború
+            legrettegettebb fegyverei közé tartoztak.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="puska.jpg" alt="Puska">
+        <div class="card-content">
+          <h3>Mannlicher Puska</h3>
+          <p>
+            Az Osztrák–Magyar Monarchia katonáinak egyik legfontosabb fegyvere.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="magyar" class="hungary">
+    <h2 class="section-title">Magyarország Szerepe</h2>
+
+    <p style="font-size:1.2rem; margin-bottom:25px;">
+      Magyarország az <span class="highlight">Osztrák–Magyar Monarchia</span> részeként
+      vett részt az első világháborúban. Több százezer magyar katona harcolt
+      különböző frontokon.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="magyar-katona.jpg" alt="Magyar katonák">
+        <div class="card-content">
+          <h3>Magyar Honvédek</h3>
+          <p>
+            A magyar katonák az olasz, orosz és balkáni frontokon is harcoltak.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="tuzerseg.jpg" alt="Tüzérség">
+        <div class="card-content">
+          <h3>Tüzérség</h3>
+          <p>
+            A Monarchia erős tüzérsége fontos szerepet játszott a csatákban.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="tortenelem">
+    <h2 class="section-title">Fontos Események</h2>
+
+    <div class="timeline">
+
+      <div>
+        <h4>1914 – A háború kezdete</h4>
+        <p>
+          Ferenc Ferdinánd meggyilkolása után kitört az első világháború.
+        </p>
+      </div>
+
+      <div>
+        <h4>1916 – A tankok megjelenése</h4>
+        <p>
+          A brit hadsereg először vetett be harckocsikat.
+        </p>
+      </div>
+
+      <div>
+        <h4>1918 – A háború vége</h4>
+        <p>
+          A központi hatalmak vereséget szenvedtek, és véget ért a háború.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      Készítette: Saját történelem projekt | Első világháború fegyverei
+    </p>
+  </footer>
+
+</body>
+</html>
